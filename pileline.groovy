@@ -13,8 +13,8 @@ pipeline {
         }
         stage('test') {
             steps {
-                withSonarQubeEnv( installationName: 'soner',credentialsId: 'n-sonar') {
-                 // some block
+                withSonarQubeEnv( installationName: 'sonar',credentialsId: 'n-sonar') {
+                 sh '/opt/maven/bin/mvn sonar:sonar'
                }
                     // sh '/opt/maven/bin/mvn sonar:sonar -Dsonar.projectKey=studentapp -Dsonar.host.url=http://18.183.110.133:9000  -Dsonar.login=51590797e14e0536d584661cedf809f92367e2e1'
             }
